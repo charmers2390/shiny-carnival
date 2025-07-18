@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luna AI – Login</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #container {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      width: 90%;
+      max-width: 400px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background-color: #03a9f4;
+      color: white;
+      cursor: pointer;
+    }
+    #createBtn {
+      background-color: #4caf50;
+    }
+    #accountSection {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="loginSection">
+      <h2>Login to Luna AI</h2>
+      <input type="email" id="email" placeholder="Enter email" required />
+      <input type="password" id="password" placeholder="Enter password" required />
+      <button onclick="login()">Login</button>
+      <button id="createBtn" onclick="createAccount()">Create Account</button>
+    </div>
+    <div id="accountSection">
+      <h2>Welcome to Luna AI</h2>
+      <p><strong>Email:</strong> <span id="userEmail"></span></p>
+      <p>You're now logged in. Welcome back!</p>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const loginSection = document.getElementById('loginSection');
+    const accountSection = document.getElementById('accountSection');
+    const userEmail = document.getElementById('userEmail');
+
+    function login() {
+      const email = emailInput.value;
+      const password = passwordInput.value;
+      const savedEmail = localStorage.getItem("luna_email");
+      const savedPassword = localStorage.getItem("luna_password");
+
+      if (email === savedEmail && password === savedPassword) {
+        userEmail.textContent = email;
+        loginSection.style.display = "none";
+        accountSection.style.display = "block";
+      } else {
+        alert("Incorrect email or password");
+      }
+    }
+
+    function createAccount() {
+      const email = emailInput.value;
+      const password = passwordInput.value;
+
+      if (!email || !password) {
+        alert("Please fill in both fields");
+        return;
+      }
+
+      localStorage.setItem("luna_email", email);
+      localStorage.setItem("luna_password", password);
+      alert("Account created! You can now log in.");
+    }
+
+    function logout() {
+      loginSection.style.display = "block";
+      accountSection.style.display = "none";
+      emailInput.value = "";
+      passwordInput.value = "";
+    }
+
+    window.onload = function () {
+      const savedEmail = localStorage.getItem("luna_email");
+      const savedPassword = localStorage.getItem("luna_password");
+
+      if (savedEmail && savedPassword) {
+        emailInput.value = savedEmail;
+      }
+    };
+  </script>
+</body>
+</html>
