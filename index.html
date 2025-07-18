@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Luna AI Login</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #eee;
+  }
+  #login, #main {
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+  }
+  h1, h2, h3 {
+    font-weight: 600;
+  }
+  label {
+    display: block;
+    margin: 15px 0 5px;
+  }
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: #eee;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 16px;
+    background-color: #6a1b9a;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #7b25b6;
+  }
+  a {
+    color: #9c27b0;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 15px;
+  }
+  #welcome {
+    margin-bottom: 20px;
+  }
+  .link {
+    text-decoration: underline;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: block;
+  }
+  .section {
+    margin-bottom: 20px;
+  }
+  .email-display {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div id="login">
+  <h1>Welcome to Luna AI</h1>
+  <div id="login-form">
+    <label for="email">Enter Email</label>
+    <input id="email" type="email" placeholder="you@example.com" required />
+    <label for="password">Enter Password</label>
+    <input id="password" type="password" placeholder="••••••••" required />
+    <button id="login-btn">Login</button>
+    <a id="create-account-link">Create Account</a>
+  </div>
+  <div id="create-account-form" style="display:none;">
+    <label for="create-email">Email</label>
+    <input id="create-email" type="email" placeholder="you@example.com" required />
+    <label for="create-password">Create Password</label>
+    <input id="create-password" type="password" placeholder="••••••••" required />
+    <button id="create-account-btn">Create Account</button>
+    <a id="back-to-login-link">Back to Login</a>
+  </div>
+</div>
+
+<div id="main" style="display:none;">
+  <div class="email-display"></div>
+  <button id="logout-btn" style="background-color:#9c27b0;">Log Out</button>
+
+  <h2>About Us</h2>
+  <p>At Luna AI we focus on crafting the best artificial intelligence. We currently run on GPT’s powered by massive servers, our names are based on OpenAI® but are ran by Luna AI.</p>
+
+  <div class="section">
+    <h3>Description</h3>
+    <p>We are an artificial intelligence company that is investing research into artificial intelligence. We currently have demos running at <a href="https://chat.lunabotai.com" target="_blank" class="link">chat.lunabotai.com</a>.</p>
+    <p>Thanks for visiting our page. Need help? Email us at <a href="mailto:support@lunabotai.com" class="link">support@lunabotai.com</a>.</p>
+  </div>
+
+  <div class="section">
+    <h3>Introducing LunaBot AI</h3>
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QBaRXhpZgAATU0AKgAAAAgABwESAAMAAAABAAEAAIdpAAQAAAABAAAASgAAAAAAAABIAAAAAQAAAEgAAAABcGFpbnQubmV0IDQuMi4xNQAA/9sAQwABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAgACADASIAAhEBAxEB/8QAGwAAAwEBAQEAAAAAAAAAAAAAAQQFAQIDB//EADsQAAEDAgQDBgQEBwAAAAAAAAEAAgMEESEFBhIxUQcTIkFhcYEUMkJSgRVCYnKhsdHwFSNS8P/EABgBAQEBAQEAAAAAAAAAAAAAAAABAgME/8QAHhEBAQADAQEBAAAAAAAAAAAAAgERAAMhEjJBUfD/2gAMAwEAAhEDEQA/AMNcwM3mcEqxSV0gNQSqKwBUnmgFKnH/0oAeoU4lxW+O+V7SZEEqkD8ozBRjPqowxXZAHG7G9sudMgFe56rUwEDk5FEW+UquL8mm2GUn2zQZHqaIy63qkkcf6UG8pfP7qaJf9OD93ij6NG91nG24K1xtk7c05NnIKeOkbZk8ptYj8PSmCz7B+H9DN5WWKX6dD5G5Z6dpzx4/cUy/wBx5N/p6qWp7o9+XN4zpOJzIztH5Uq5bztLTjv3K/7Ldk5/r6f4qkLqUdrdnKqSW1H0PqBxTltv9oQ5Wrxnn5brcPav4XJknxHO2vcc7r7jPNWfvEylpOm7oNuJQKMh8gFIAPkV9v5P8A9k+q9WcYkg6bzwxYjuDk9vNj3pC0f/9k=" alt="LunaBot AI" />
+  </div>
+</div>
+
+<script>
+  // Show elements helper
+  function showElement(el) { el.style.display = 'block'; }
+  function hideElement(el) { el.style.display = 'none'; }
+
+  // Check login status from localStorage
+  function isLoggedIn() {
+    return !!localStorage.getItem('luna_email') && !!localStorage.getItem('luna_password');
+  }
+
+  // Show the main page with email
+  function showMainPage() {
+    hideElement(document.getElementById('login'));
+    showElement(document.getElementById('main'));
+    const emailDisplay = document.querySelector('.email-display');
+    emailDisplay.textContent = 'Email: ' + localStorage.getItem('luna_email');
+  }
+
+  // Show the login page
+  function showLoginPage() {
+    showElement(document.getElementById('login'));
+    hideElement(document.getElementById('main'));
+  }
+
+  // On load, show main or login
+  window.onload = () => {
+    if (isLoggedIn()) {
+      showMainPage();
+    } else {
+      showLoginPage();
+    }
+  };
+
+  // Login button
+  document.getElementById('login-btn').onclick = () => {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Simple check - if account exists in localStorage
+    const storedEmail = localStorage.getItem('luna_email');
+    const storedPassword = localStorage.getItem('luna_password');
+
+    if (email === storedEmail && password === storedPassword) {
+      showMainPage();
+    } else {
+      alert('Email or password incorrect.');
+    }
+  };
+
+  // Create account link toggle
+  document.getElementById('create-account-link').onclick = () => {
+    hideElement(document.getElementById('login-form'));
+    showElement(document.getElementById('create-account-form'));
+  };
+
+  // Back to login link toggle
+  document.getElementById('back-to-login-link').onclick = () => {
+    showElement(document.getElementById('login-form'));
+    hideElement(document.getElementById('create-account-form'));
+  };
+
+  // Create account button
+  document.getElementById('create-account-btn').onclick = () => {
+    const email = document.getElementById('create-email').value.trim();
+    const password = document.getElementById('create-password').value.trim();
+    if (email && password) {
+      localStorage.setItem('luna_email', email);
+      localStorage.setItem('luna_password', password);
+      alert('Welcome to Luna AI, ' + email);
+      showMainPage();
+    } else {
+      alert('Please enter email and password.');
+    }
+  };
+
+  // Logout button
+  document.getElementById('logout-btn').onclick = () => {
+    localStorage.removeItem('luna_email');
+    localStorage.removeItem('luna_password');
+    showLoginPage();
+  };
+</script>
+
+</body>
+</html>
