@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luna AI – Welcome</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            width: 100%;
+            margin-top: 20px;
+        }
+        a {
+            color: #00BFFF;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="login-section">
+        <h2>Welcome Back</h2>
+        <input type="email" id="email" placeholder="Enter email">
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="login()">Login</button>
+        <button onclick="showCreateAccount()">Create Account</button>
+    </div>
+
+    <div id="create-section" class="hidden">
+        <h2>Create Account</h2>
+        <input type="email" id="new-email" placeholder="Enter email">
+        <input type="password" id="new-password" placeholder="Create password">
+        <button onclick="createAccount()">Sign Up</button>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <h1>Welcome to Luna AI</h1>
+        <p>Welcome to Luna AI, the future of artificial intelligence. We’re investing, researching into artificial intelligence and currently have three models:</p>
+        <ul>
+            <li><b>3o</b> – our newest model that is still in research</li>
+            <li><b>2.5</b> – a free public model that anyone can use on any browser</li>
+            <li><b>Luna Custom</b> – a model that allows users to dive deep into research and tools</li>
+        </ul>
+        <p>Chat with them at <a href="https://chat.lunabotai.com">chat.lunabotai.com</a></p>
+
+        <h2>About</h2>
+        <p>This is a small tech startup located in Centerville, Tennessee investing research into artificial intelligence.</p>
+
+        <h2>Newest Release</h2>
+        <p><b>3o</b> – our newest model. It can help with anything from “why was pizza invented” to “how does the human body work?”</p>
+
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."/>
+
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://chat.lunabotai.com">Chat now</a></li>
+            <li><a href="mailto:support@lunabotai.com">Support</a></li>
+            <li><a href="https://usagepolicies.privacypolicy.tos.lunabotai.com">TOS</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const loginSection = document.getElementById('login-section');
+    const createSection = document.getElementById('create-section');
+    const mainContent = document.getElementById('main-content');
+
+    function login() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const storedEmail = localStorage.getItem('luna_email');
+        const storedPassword = localStorage.getItem('luna_password');
+
+        if (email === storedEmail && password === storedPassword) {
+            loginSection.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+        } else {
+            alert("Invalid credentials.");
+        }
+    }
+
+    function showCreateAccount() {
+        loginSection.classList.add('hidden');
+        createSection.classList.remove('hidden');
+    }
+
+    function createAccount() {
+        const email = document.getElementById('new-email').value;
+        const password = document.getElementById('new-password').value;
+
+        localStorage.setItem('luna_email', email);
+        localStorage.setItem('luna_password', password);
+
+        alert("Account created. You can now login.");
+        location.reload();
+    }
+
+    // Auto-login if user is already registered and session is still alive
+    if (localStorage.getItem('luna_email') && localStorage.getItem('luna_password')) {
+        loginSection.classList.remove('hidden');
+    }
+</script>
+</body>
+</html>
