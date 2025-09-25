@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LunaBotAI - Futuristic Homepage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 3em;
+      background: linear-gradient(90deg, #9b59b6, #10a37f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-size: 2em;
+      color: #9b59b6;
+    }
+    .btn-main {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #10a37f, #9b59b6);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(155, 89, 182, 0.6);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-main:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(155, 89, 182, 0.9);
+    }
+    .features, .why-choose {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px rgba(155, 89, 182, 0.8);
+    }
+    .card h3 { color: #9b59b6; }
+    .about { text-align: center; max-width: 800px; margin: 0 auto; color: #ddd; }
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      background: rgba(255,255,255,0.07);
+    }
+    .faq-answer {
+      display: none;
+      padding: 15px;
+      color: #ccc;
+      background: #111;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9em;
+      color: #aaa;
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .links a {
+      padding: 12px 20px;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .links a:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .floating-chat {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(90deg, #10a37f, #9b59b6);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(155, 89, 182, 0.6);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .floating-chat:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(155, 89, 182, 0.9);
+    }
+  </style>
+</head>
+<body>
+
+  <section id="hero">
+    <h1>LunaBotAI</h1>
+    <p style="text-align:center;color:#aaa;font-size:1.2em;">Smarter Conversations. Powered by ChatGPT‑5.</p>
+    <div style="text-align:center;">
+      <a href="https://chat.lunabotai.com/" target="_blank" class="btn-main">💬 Chat Now</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p class="about">
+      LunaBotAI is your futuristic AI assistant designed to make your life easier, smarter, and more productive. 
+      Created by Charmers and powered by ChatGPT‑5, LunaBotAI delivers cutting-edge intelligence while ensuring safety, privacy, and creativity. 
+      Our mission is to bring advanced conversational AI to everyone — from curious learners to businesses worldwide.
+    </p>
+  </section>
+
+  <section id="features">
+    <h2>Features</h2>
+    <div class="features">
+      <div class="card"><h3>🚀 Fast & Intelligent</h3><p>Lightning-fast responses powered by advanced AI models.</p></div>
+      <div class="card"><h3>🎨 Creative Power</h3><p>Write stories, brainstorm ideas, and explore endless creativity.</p></div>
+      <div class="card"><h3>🧠 Smart Memory</h3><p>Keeps track of your context during a chat for smoother conversations.</p></div>
+      <div class="card"><h3>🌐 Always Available</h3><p>Access LunaBotAI anytime, anywhere from your devices.</p></div>
+      <div class="card"><h3>🔒 Privacy First</h3><p>Built with industry-leading privacy and responsible AI standards.</p></div>
+      <div class="card"><h3>🤖 Multi-purpose</h3><p>From coding to customer support, LunaBotAI adapts to any task.</p></div>
+    </div>
+  </section>
+
+  <section id="why">
+    <h2>Why Choose LunaBotAI?</h2>
+    <div class="why-choose">
+      <div class="card"><h3>⚡ Speed</h3><p>Optimized to deliver answers instantly with minimal delay.</p></div>
+      <div class="card"><h3>🌍 Reliability</h3><p>Powered by strong infrastructure for global accessibility.</p></div>
+      <div class="card"><h3>🔐 Security</h3><p>Your conversations stay private and protected.</p></div>
+      <div class="card"><h3>💡 Innovation</h3><p>Constantly evolving to bring you the latest AI capabilities.</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Is LunaBotAI free?</div>
+        <div class="faq-answer">LunaBotAI offers both free and premium plans depending on usage and features.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">What powers LunaBotAI?</div>
+        <div class="faq-answer">LunaBotAI is powered by advanced AI models, primarily ChatGPT‑5, customized for better adaptability.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">How is my data handled?</div>
+        <div class="faq-answer">We follow strict privacy policies and do not sell your personal information. See our Terms of Service for details.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Can I use LunaBotAI for business?</div>
+        <div class="faq-answer">Yes! LunaBotAI is perfect for business use cases like customer support, writing, or brainstorming sessions.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Where can I get support?</div>
+        <div class="faq-answer">You can reach us anytime via email at support@lunabotai.com.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-started">
+    <h2>Get Started</h2>
+    <div class="links">
+      <a href="https://chat.lunabotai.com/" target="_blank">💬 Chat Now</a>
+      <a href="https://usagepolicies.privacypolicy.tos.lunabotai.com/" target="_blank">📜 Terms of Service</a>
+      <a href="mailto:support@lunabotai.com">📧 Contact Support</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 LunaBotAI. All rights reserved.
+  </footer>
+
+  <a href="https://chat.lunabotai.com/" target="_blank" class="floating-chat">💬 Chat Now</a>
+
+  <script>
+    function toggleFAQ(el) {
+      const answer = el.nextElementSibling;
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
